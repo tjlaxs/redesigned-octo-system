@@ -25,4 +25,24 @@ T.it('init - directory', function()
   return T.expect(init.command, 'git init test')
 end)
 
+T.it('checkout', function()
+  local checkout = P.checkout('test')
+  if checkout ~= nil then
+    return T.expect(checkout.command, 'git checkout test')
+  end
+  -- Failing for nil
+  -- TODO: Need to do T.assert... fix and update porp
+  return T.expect('true', 'false')
+end)
+
+T.it('commit -m', function()
+  local commit = P.commit('test')
+  if commit ~= nil then
+    return T.expect(commit.command, 'git commit -m \'test\'')
+  end
+  -- Failing for nil
+  -- TODO: Need to do T.assert... fix and update porp
+  return T.expect('true', 'false')
+end)
+
 T.run()
