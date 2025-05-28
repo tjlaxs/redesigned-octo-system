@@ -3,6 +3,7 @@ local P = require('porcelain')
 
 M.hello = 'hello world'
 
-os.execute('ls')
+local status = P.status()
+status:perform(os.execute)
 
 return M
