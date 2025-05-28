@@ -2,11 +2,11 @@ local Command = require('command')
 local RunCommand = Command.RunCommand
 local M = {}
 
-M.init = function(branch)
-  if type(branch) ~= 'string' then
+M.init = function(directory)
+  if type(directory) ~= 'string' then
     return RunCommand('git init')
   else
-    return RunCommand('git init' .. branch)
+    return RunCommand('git init ' .. directory)
   end
 end
 
