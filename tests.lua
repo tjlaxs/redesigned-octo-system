@@ -50,6 +50,14 @@ T.it('merge', function()
   return T.assert('returned nil')
 end)
 
+T.it('merge_feature', function()
+  local merge_feature = P.merge_feature('testing_feature')
+  if merge_feature ~= nil then
+    return T.expect(merge_feature.command, 'git merge feature/testing_feature')
+  end
+  return T.assert('returned nil')
+end)
+
 T.it('add', function()
   local add = P.add('test')
   if add ~= nil then
