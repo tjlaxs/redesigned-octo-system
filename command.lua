@@ -3,7 +3,6 @@ local CommandObject = Object:extend()
 
 local RunCommand = CommandObject:extend()
 function RunCommand:new(command)
-  self.super.new(self)
   self.command = command
 end
 
