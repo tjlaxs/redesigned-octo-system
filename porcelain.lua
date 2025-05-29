@@ -42,6 +42,13 @@ M.merge = function(branch)
   return RunCommand('git merge ' .. branch)
 end
 
+M.merge_feature = function(feature)
+  if type(feature) ~= 'string' then
+    return nil
+  end
+  return RunCommand('git merge feature/' .. feature)
+end
+
 M.add = function(file)
   if type(file) ~= 'string' then
     return nil
