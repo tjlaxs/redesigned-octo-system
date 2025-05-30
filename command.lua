@@ -1,17 +1,13 @@
-local Object = require('classic.classic')
-local CommandObject = Object:extend()
+local M = {}
 
-local RunCommand = CommandObject:extend()
-function RunCommand:new(command)
-  self.command = command
+M.RunCommand = function(command)
+  return {
+    command = command
+  }
 end
 
-function RunCommand:perform(runner)
-  runner(self.command)
+M.perform = function(cmd, runner)
+  return runner(cmd.command)
 end
 
-return {
-  Command = CommandObject,
-
-  RunCommand = RunCommand,
-}
+return M
