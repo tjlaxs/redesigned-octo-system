@@ -1,6 +1,3 @@
 [submodule "potential-octo-rotary-phone"]
 	path = potential-octo-rotary-phone
 	url = https://github.com/tjlaxs/potential-octo-rotary-phone
-[submodule "classic"]
-	path = classic
-	url = https://github.com/rxi/classic
